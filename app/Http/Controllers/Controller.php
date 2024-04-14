@@ -10,7 +10,10 @@ use Illuminate\Routing\Controller as BaseController;
 /**
  * @OA\Info(
  *     title="Todo API",
- *     version="0.1"
+ *     version="0.1",
+ *     @OA\Contact(
+ *          email="werlessono@gmail.com"
+ *      ),
  * )
  */
 class Controller extends BaseController

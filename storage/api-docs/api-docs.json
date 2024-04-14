@@ -2,19 +2,60 @@
     "openapi": "3.0.0",
     "info": {
         "title": "Todo API",
+        "contact": {
+            "email": "werlessono@gmail.com"
+        },
         "version": "0.1"
     },
     "paths": {
         "/api/users": {
             "get": {
-                "summary": "list products",
+                "tags": [
+                    "user"
+                ],
+                "summary": "Returns a list of users",
+                "description": "Returns a list of users",
                 "operationId": "c457726701591d1183b53aa71fc13441",
                 "responses": {
                     "200": {
-                        "description": "The data"
+                        "description": "A list with users"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
                     }
                 }
             }
         }
-    }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "title": "User",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "user",
+            "description": "User related operations"
+        }
+    ]
 }
