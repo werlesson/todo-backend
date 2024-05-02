@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TodoApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    @vite('resources/js/app.js')
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar__logo">
+                <img src="/assets/images/logo.png" alt="logo do sistema" />
+            </div>
+        </aside>
+        <section class="content">
+            <nav>
+                <a href="#" class="btn btn-primary">
+                    Criar tarefa
+                </a>
+            </nav>
+            <main>
+                <section class="graph">
+                    <div class="graph__header">
+                        <h2>Progresso do dia</h2>
+                        <hr />
+                        <div class="graph__header__date">
+                            <img src="/assets/images/icon-prev.png" alt="">
+                            <span>25 de Abr</span>
+                            <img src="/assets/images/icon-next.png" alt="">
+                        </div>
+                    </div>
+                    <div class="graph__header__subtitle">
+                        Tarefa <b>3/6</b>
+                    </div>
+                    <div class="graph__content">
+                        <div class="graph-placeholder"></div>
+                        <div class="d-flex">
+                            <div class="mr-1">
+                                <img src="/assets/images/icon-info.png" alt="">
+                            </div>
+                            <span>Restam 3 tarefas para serem realizadas!</span>
+                        </div>
+
+                    </div>
+                </section>
+                <section class="list">
+                    <article class="list__header">
+                        <select name="" class="list__header__select">
+                            <option value="">Todas as tarefas</option>
+                            <option value="">Pendentes</option>
+                            <option value="">Concluídas</option>
+                        </select>
+                    </article>
+                    <article class="list__content">
+                        <div class="list__item">
+                            <div class="list__item__title">
+                                <input type="checkbox" name="" id="">
+                                Fazer tal coisa para fulano
+                            </div>
+                            <div class="list__item__priority">
+                                <div class="sphere"></div>
+                                Alta prioridade
+                            </div>
+                            <div class="list__item__actions">
+                                <a href="">
+                                    <img src="/assets/images/icon-edit.png" alt="editar tarefa" />
+                                </a>
+                                <a href="">
+                                    <img src="/assets/images/icon-delete.png" alt="editar tarefa" />
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </main>
+        </section>
+    </div>
+</body>
+</html>
