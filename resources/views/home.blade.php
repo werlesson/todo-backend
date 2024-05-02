@@ -37,19 +37,9 @@
                 </select>
             </article>
             <article class="list__content">
-                @php
-                    $tasks = [
-                        [
-                            'id' => 1,
-                            'done' => false,
-                            'title' => 'Título da tarefa',
-                            'category' => 'Categoria da tarefa',
-                        ],
-                    ]
-                @endphp
-
-
-                <x-task :data="$tasks[0]"/>
+                @foreach ($tasks as $task)
+                    <x-task :data="$task"/>
+                @endforeach
             </article>
         </section>
     </div>

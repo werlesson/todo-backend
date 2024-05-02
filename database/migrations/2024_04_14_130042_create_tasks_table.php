@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->dateTime('due_date');
+            $table->boolean('is_done')->default(false);
             $table->foreignIdFor(User::class)->references('id')->on('users')->onDelete('CASCADE');
             $table->foreignIdFor(Category::class)->references('id')->on('categories')->onDelete('CASCADE');
             $table->timestamps();
