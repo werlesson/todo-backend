@@ -1,7 +1,7 @@
 :root {
     --white: #F6F5FF;
     --white-dark: #cdcfd6;
-    --primary: #6143FF;
+    --primary: hsl(250, 100%, 63%);
     --primary-light: #e1dbff;
     --primary-dark: #543bcf;
     --blue: #100066;
@@ -25,6 +25,30 @@ body {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.gap-1 {
+    gap: 0.5rem;
+}
+
+.flex-1 {
+    flex: 1 !important;
+}
+
+.flex-row {
+    flex-direction: row !important;
+}
+
+.justify-center {
+    justify-content: center !important;
+}
+
+.align-center {
+    align-items: center !important;
 }
 
 .container {
@@ -59,6 +83,10 @@ img {
     padding: 20px 30px;
     border-radius: 10px;
     transition: all 0.18s ease-in-out;
+    text-align: center;
+    background-color: var(--white-dark);
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -232,4 +260,65 @@ section.list {
     display: flex;
     gap: 20px;
     height: 100%;
+}
+
+
+/* TAREFAS */
+#page_task {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#page_task .page_task__header {
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#page_task .page_task__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+#page_task .page_task__form__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.15rem;
+    width: inherit;
+}
+
+#page_task .page_task__form__label {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+}
+
+#page_task .page_task__form__input {
+    height: 40px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem;
+    border: 1px solid rgba(16, 0, 102, 0.38);
+    transition: all 0.12s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#page_task textarea.page_task__form__input {
+    height: unset !important;
+}
+
+#page_task .page_task__form__input:focus {
+    border: 1px solid var(--primary);
+    box-shadow: 0px 0px 1px 1px rgba(97, 67, 255, 0.5);
+}
+
+#page_task .page_task__form__input:focus-visible {
+    outline: none !important;
 }
