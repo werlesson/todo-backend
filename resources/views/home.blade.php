@@ -10,13 +10,17 @@
                 <h2>Progresso do dia</h2>
                 <hr />
                 <div class="graph__header__date">
-                    <img src="/assets/images/icon-prev.png" alt="">
-                    <span>25 de Abr</span>
-                    <img src="/assets/images/icon-next.png" alt="">
+                    <a href="{{route('home', ['date' => $date_prev_button])}}">
+                        <img src="/assets/images/icon-prev.png" alt="">
+                    </a>
+                    <span>{{$date_as_string}}</span>
+                    <a href="{{route('home', ['date' => $date_next_button])}}">
+                        <img src="/assets/images/icon-next.png" alt="">
+                    </a>
                 </div>
             </div>
             <div class="graph__header__subtitle">
-                Tarefa <b>3/6</b>
+                Tarefa <b>{{$done_tasks_count}}/{{$tasks_count}}</b>
             </div>
             <div class="graph__content">
                 <div class="graph-placeholder"></div>
@@ -24,17 +28,17 @@
                     <div class="mr-1">
                         <img src="/assets/images/icon-info.png" alt="">
                     </div>
-                    <span>Restam 3 tarefas para serem realizadas!</span>
+                    <span>Restam {{$undone_tasks_count}} tarefas para serem realizadas!</span>
                 </div>
 
             </div>
         </section>
         <section class="list">
             <article class="list__header">
-                <select name="" class="list__header__select">
-                    <option value="">Todas as tarefas</option>
-                    <option value="">Pendentes</option>
-                    <option value="">Concluídas</option>
+                <select name="" class="list__header__select" onchange="changeTaksStatusFilter(this)">
+                    <option value="all_task">Todas as tarefas</option>
+                    <option value="task_pending">Pendentes</option>
+                    <option value="task_done">Concluídas</option>
                 </select>
             </article>
             <article class="list__content">
@@ -68,6 +72,28 @@
             } else {
                 element.checked = !status;
             }
+        }
+
+        function changeTaksStatusFilter(e){
+            const value = e.value;
+
+            showAllTasks();
+
+            if (value === 'task_pending') {
+                document.querySelectorAll('.task_done').forEach((el) => {
+                    el.style.display = 'none';
+                });
+            } else if (value === 'task_done') {
+                document.querySelectorAll('.task_pending').forEach((el) => {
+                    el.style.display = 'none';
+                });
+            }
+        }
+
+        function showAllTasks() {
+            document.querySelectorAll('.list__item').forEach((el) => {
+                el.style.display = 'grid';
+            });
         }
     </script>
 </x-layout>
