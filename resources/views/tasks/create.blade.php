@@ -41,7 +41,7 @@
             />
 
             <div class="page_task__form__group d-flex flex-row gap-1">
-                <x-btn text="Resetar" class="btn flex-1" type="reset"/>
+                <x-btn text="Limpar" class="btn flex-1" type="reset"/>
                 <x-btn text="Criar tarefa" class="btn btn-primary flex-1" type="submit"/>
             </div>
         </form>

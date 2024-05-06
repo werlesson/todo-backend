@@ -30,3 +30,4 @@ Route::post('/task/create_action', [TaskController::class, 'create_action'])->na
 // AUTH
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register_action', [AuthController::class, 'register_action'])->name('user.register_action');
