@@ -256,6 +256,10 @@ section.list {
     margin-right: 0.5rem;
 }
 
+.ml-1 {
+    margin-left: 0.5rem;
+}
+
 .home__page {
     display: flex;
     gap: 20px;

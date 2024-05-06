@@ -46,6 +46,8 @@ class TaskController extends Controller
     public function edit_action(Request $request)
     {
         $request_update = $request->except('_token', 'id');
+        $request_update['is_done'] = $request->is_done ? true : false;
+
         $task = Task::find($request->id);
 
         if (!$task) {

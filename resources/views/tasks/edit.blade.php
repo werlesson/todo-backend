@@ -46,9 +46,16 @@
                 value="{{$task->description ?? ''}}"
             />
 
+            <x-form.input
+                name="is_done"
+                label="Tarefa realizada?"
+                type="checkbox"
+                checked="{{$task->is_done}}"
+            />
+
             <div class="page_task__form__group d-flex flex-row gap-1">
                 <x-btn text="Resetar" class="btn flex-1" type="reset"/>
-                <x-btn text="Salvar edição" class="btn btn-primary flex-1" type="submit"/>
+                <x-btn text="Atualizar tarefa" class="btn btn-primary flex-1" type="submit"/>
             </div>
         </form>
 

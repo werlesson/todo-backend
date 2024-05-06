@@ -1,6 +1,6 @@
 <div class="page_task__form__group">
     <label class="page_task__form__label" for="{{$name}}">
-        {{empty($label) ? '' : $label}}
+        {{empty($label) || (!empty($type) && $type == 'checkbox') ? '' : $label}}
     </label>
     @if (!empty($type) && $type == 'select')
         <select
@@ -30,6 +30,19 @@
             id="{{$name}}"
             {{ empty($required) ? '' : 'required' }}
         >{{$value ?? ''}}"</textarea>
+    @elseif (!empty($type) && $type == 'checkbox')
+        <div class="d-flex align-center">
+            <label class="page_task__form__label" style="margin-bottom: 0;" for="{{$name}}">
+                {{empty($label) ? '' : $label}}
+            </label>
+            <input type="checkbox" class="ml-1"
+                name="{{$name}}"
+                id="{{$name}}"
+                @if (boolval($checked))
+                    checked
+                @endif
+            />
+        </div>
     @else
         <input
             type="{{empty($type) ? 'text' : $type}}"
