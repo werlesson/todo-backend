@@ -3,7 +3,7 @@
         <x-btn text="Login" href="{{route('login')}}"></x-btn>
     </x-slot:btn>
 
-        <section id="page_task">
+    <section id="page_task">
         <h2 class="page_task__header">Registrar-se</h2>
 
         @if ($errors->any())
