@@ -8,6 +8,17 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    public function update(Request $request)
+    {
+        $task = Task::findOrFail($request->taskId);
+        if (!$task) {
+            return ['success' => false];
+        }
+        $task->is_done = $request->status;
+        $task->save();
+        return ['success' => true];
+    }
+
     public function index(Request $request)
     {
         return view('home');

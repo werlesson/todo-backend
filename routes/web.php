@@ -27,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/task/edit_action', [TaskController::class, 'edit_action'])->name('task.edit_action');
     Route::post('/task/create_action', [TaskController::class, 'create_action'])->name('task.create_action');
+    Route::post('/task/update', [TaskController::class, 'update'])->name('task.update');
 
     // AUTH
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

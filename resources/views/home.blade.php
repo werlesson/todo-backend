@@ -44,4 +44,30 @@
             </article>
         </section>
     </div>
+
+    <script>
+        async function taskUpdate(element) {
+            const status = element.checked;
+            const taskId = element.getAttribute('data-id');
+            const url = '{{route('task.update')}}';
+            // alert(url)
+            const rawResult = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                   status, taskId, _token: '{{csrf_token()}}'
+                })
+            });
+            const result = await rawResult.json();
+
+            if (result.success) {
+                alert("Tarefa atualizada com sucesso!");
+            } else {
+                element.checked = !status;
+            }
+        }
+    </script>
 </x-layout>
